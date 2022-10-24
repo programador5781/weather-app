@@ -5,17 +5,26 @@ import styles from './SearchBar.module.css';
 
 export default function SearchBar({onSearch}) {
   // acá va tu código
-  function handleOnSearch(){
+  function handleOnSearch(event){
+    event.preventDefault();
     if(typeof onSearch === "function"){
       const input = document.getElementById("search-bar-input");
       onSearch(input.value);
+      input.value=" ";
     }
   }
   
   return (
-    <div className={styles.searchBar}>
-      <input placeholder="Buscar ciudades..." id="search-bar-input"/>
-      <button onClick={handleOnSearch}><IoSearchOutline/></button>
-    </div>
+    // <div className={styles.searchBar}>
+    //   <input placeholder="Buscar ciudades..." id="search-bar-input"/>
+    //   <button onClick={handleOnSearch}><IoSearchOutline/></button>
+    // </div>
+
+    <form className={styles.searchBar} onSubmit={handleOnSearch}>
+    <input placeholder='Buscar ciudades...' id='search-bar-input'/>
+    <button type='submit'>
+      <IoSearchOutline/>
+    </button>
+  </form>
     )
 };
