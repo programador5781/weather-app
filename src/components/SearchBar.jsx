@@ -15,6 +15,10 @@ export default function SearchBar({onSearch}) {
   }
   
   return (
+    // <div>
+    //   <input id="search-bar-input"/>
+    //   <button onClick={handleOnSearch}>Agregar</button>
+    // </div>
     <form className={styles.searchBar} onSubmit={handleOnSearch}>
       <input placeholder="Buscar ciudades..." id="search-bar-input"/>
       <button type="submit">
