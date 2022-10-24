@@ -51,7 +51,7 @@ function App() {
     <div className="App">
         <SearchBar onSearch={onSearch}/>
         <Cards cities={cities} onRemove={handleRemoveCity}/>
-    </div>
+    </div>   
   );
 }
 
